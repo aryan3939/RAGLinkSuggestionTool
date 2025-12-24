@@ -2,6 +2,8 @@
 
 An AI-powered tool that automatically suggests the most relevant internal blog posts to link from any given blog post, complete with AI-generated reasons and anchor text suggestions.
 
+**🚀 Live Demo**: https://raglinksuggestiontool.streamlit.app/
+
 ## 📋 Overview
 
 This tool helps optimize internal linking for SEO by:
@@ -20,6 +22,7 @@ This tool helps optimize internal linking for SEO by:
 - **JSON Export**: Download results in the required format
 - **Efficient Scraping**: Async scraping with Crawl4AI for JavaScript-rendered content
 - **Persistent Database**: ChromaDB vector storage for fast repeated queries
+- **Free Deployment**: Hosted on Streamlit Cloud
 
 ## 🚀 Quick Start
 
@@ -34,7 +37,7 @@ This tool helps optimize internal linking for SEO by:
 1. **Clone the repository**
 
    ```bash
-   git clone <your-repo-url>
+   git clone <https://github.com/aryan3939/RAGLinkSuggestionTool>
    cd LinkSuggestionTool
    ```
 
@@ -148,31 +151,31 @@ LinkSuggestionTool/
 
 ## 🔧 How It Works
 
-### 1. **Scraping Phase** (`utils/scraper.py`)
+### 1. **Scraping Phase** ([`utils/scraper.py`](utils/scraper.py))
 
 - Fetches sitemap XML
 - Scrapes each post using Crawl4AI (handles JavaScript)
 - Extracts title + main content as markdown
 
-### 2. **Embedding Phase** (`utils/embeddings.py`)
+### 2. **Embedding Phase** ([`utils/embeddings.py`](utils/embeddings.py))
 
 - Converts content to 768-dim vectors using Google AI
 - Stores in ChromaDB with COSINE similarity metric
 - Persists to disk for reuse
 
-### 3. **Search Phase** (`utils/similarity.py`)
+### 3. **Search Phase** ([`utils/similarity.py`](utils/similarity.py))
 
 - Accepts user's blog post URL
 - Retrieves its embedding vector
 - Finds top-K most similar posts via cosine similarity
 
-### 4. **Enhancement Phase** (`utils/llm_processor.py`)
+### 4. **Enhancement Phase** ([`utils/llm_processor.py`](utils/llm_processor.py))
 
 - Sends post pairs to GPT-4o
 - Generates contextual linking reason
 - Creates natural anchor text (3-7 words)
 
-### 5. **Display Phase** (`app.py`)
+### 5. **Display Phase** ([`app.py`](app.py))
 
 - Shows ranked results in Streamlit UI
 - Provides JSON download
