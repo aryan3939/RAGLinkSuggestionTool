@@ -1,0 +1,17 @@
+streamlit
+langchain
+langchain-openai
+langchain-google-genai
+# langchain-embeddings
+langchain-core
+langchain-community
+chromadb
+beautifulsoup4
+lxml
+requests
+python-dotenv
+openai
+tiktoken
+pandas
+crawl4ai
+playwright

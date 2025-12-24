@@ -1,0 +1,23 @@
+# Virtual Environment
+venv/
+env/
+
+# Environment Variables
+.env
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data
+# data/  # Commented out to include database for Streamlit Cloud deployment
+*.db
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
